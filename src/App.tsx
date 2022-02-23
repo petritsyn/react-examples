@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {log} from "util";
 
 function App() {
     return (
@@ -22,14 +23,22 @@ function Rating() {
 }
 
 function Star() {
-    return <>
-        <div>star</div>
-    </>
+    return <div>star</div>
 }
 
 function Accordion() {
     return <div>
-        <h3>Menu</h3>
+        <AccordionTitle/>
+        <AccordionBody/>
+    </div>
+}
+
+function AccordionTitle() {
+    return <h3>Menu</h3>
+}
+
+function AccordionBody() {
+    return <div>
         <ul>
             <li>1</li>
             <li>2</li>
