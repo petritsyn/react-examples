@@ -7,8 +7,14 @@ function App() {
     return (
         <div>
             <PageTitle title={"This is APP component"}/>
+            <Accordion title={"Menu"} collapsed={false}/>
+
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
             <Rating value={3}/>
-            <Accordion title={"Menu"} collapsed={true}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
         </div>
     );
 }
