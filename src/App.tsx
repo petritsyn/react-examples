@@ -2,10 +2,11 @@ import React from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
+import OnOff from "./components/OnOff/OnOff";
 
 function App() {
     return (
-        <div>
+        <div className="appWrapper">
             <PageTitle title={"This is APP component"}/>
             <Accordion title={"Menu"} collapsed={false}/>
 
@@ -15,6 +16,8 @@ function App() {
             <Rating value={3}/>
             <Rating value={4}/>
             <Rating value={5}/>
+
+            <OnOff value={true}/>
         </div>
     );
 }
@@ -26,7 +29,6 @@ type PageTitlePropsType = {
 function PageTitle(props: PageTitlePropsType) {
     return <h1>{props.title}</h1>
 }
-
 
 
 export default App;
