@@ -8,7 +8,7 @@ function App() {
     return (
         <div className="appWrapper">
             <PageTitle title={"This is APP component"}/>
-            <Accordion title={"Menu"} collapsed={false}/>
+            <Accordion title={"Menu"}/>
 
             <Rating value={0}/>
             <Rating value={1}/>
@@ -17,7 +17,9 @@ function App() {
             <Rating value={4}/>
             <Rating value={5}/>
 
-            <OnOff value={true}/>
+            <OnOff />
+            <OnOff />
+            <OnOff />
         </div>
     );
 }

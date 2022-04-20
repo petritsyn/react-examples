@@ -1,16 +1,21 @@
-import React, {FC} from 'react';
+import React, {useState} from 'react';
 import s from './OnOff.module.css';
 
-type OnOffPropsType = {
-    value: boolean
-}
+const on = s.button + ' ' + s.on;
+const off = s.button + ' ' + s.off;
+const empty = s.button;
+const bulbOn = s.bulb + ' ' + s.on;
+const bulbOff = s.bulb + ' ' + s.off;
 
-const OnOff: FC<OnOffPropsType> = (props) => {
+const OnOff = () => {
+
+    let [value, setValue] = useState(false);
+
     return (
         <div className={s.OnOff}>
-            {props.value ? <div className={s.button + ' ' + s.on}>ON</div> : <div className={s.button}>ON</div>}
-            {!props.value ? <div className={s.button + ' ' + s.off}>OFF</div> : <div className={s.button}>OFF</div>}
-            {props.value ? <div className={s.bulb + ' ' + s.on}> </div> : <div className={s.bulb + ' ' + s.off}> </div>}
+            <div className={value ? on : empty} onClick={ () => setValue(true)}>ON</div>
+            <div className={value ? empty : off}  onClick={ () => setValue(false)}>OFF</div>
+            <div className={value ? bulbOn : bulbOff}></div>
         </div>
     );
 };
