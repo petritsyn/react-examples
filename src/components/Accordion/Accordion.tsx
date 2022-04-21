@@ -8,9 +8,7 @@ function Accordion(props: AccordionPropsType) {
 
     let [collapsed, setCollapsed] = useState(false);
 
-    return <div onClick={() => {
-        collapsed ? setCollapsed(false) : setCollapsed(true)
-    }}>
+    return <div onClick={() => setCollapsed(!collapsed)}>
         <AccordionTitle title={props.title}/>
         {!collapsed && <AccordionBody/>}
     </div>
