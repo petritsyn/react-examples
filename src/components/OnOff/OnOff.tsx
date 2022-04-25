@@ -7,15 +7,18 @@ const empty = s.button;
 const bulbOn = s.bulb + ' ' + s.on;
 const bulbOff = s.bulb + ' ' + s.off;
 
-const OnOff = () => {
+type OnOffPropsType = {
+    valueOnOff: boolean
+    setValueOnOff: (value: boolean) => void
+}
 
-    let [value, setValue] = useState(false);
+const OnOff = (props: OnOffPropsType) => {
 
     return (
         <div className={s.OnOff}>
-            <div className={value ? on : empty} onClick={ () => setValue(true)}>ON</div>
-            <div className={value ? empty : off}  onClick={ () => setValue(false)}>OFF</div>
-            <div className={value ? bulbOn : bulbOff}></div>
+            <div className={props.valueOnOff ? on : empty} onClick={ () => props.setValueOnOff(true)}>ON</div>
+            <div className={props.valueOnOff ? empty : off}  onClick={ () => props.setValueOnOff(false)}>OFF</div>
+            <div className={props.valueOnOff ? bulbOn : bulbOff}></div>
         </div>
     );
 };

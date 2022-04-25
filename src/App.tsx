@@ -1,28 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
+import UncontrolledAccordion from "./components/Accordion/UncontrolledAccordion";
 import {Rating} from "./components/Rating/Rating";
-import OnOff from "./components/OnOff/OnOff";
+import UncontrolledOnOff from "./components/OnOff/UncontrolledOnOff";
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
+import Accordion from "./components/Accordion/Accordion";
+import OnOff from "./components/OnOff/OnOff";
 
 function App() {
+
+    let [ratingValue, setRatingValue] = useState<number>(3);
+    let [collapsed, setCollapsed] = useState(false);
+    let [valueOnOff, setValueOnOff] = useState(false);
+
     return (
         <div className="appWrapper">
             <PageTitle title={"This is APP component"}/>
-            <Accordion title={"Menu"}/>
+            <UncontrolledAccordion title={"Menu uncontrolled"}/>
 
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
+            <Accordion title={"Menu"} collapsed={collapsed} setCollapsed={setCollapsed}/>
+
+            <Rating value={ratingValue} onClick={setRatingValue}/>
 
             <UncontrolledRating/>
 
-            <OnOff />
-            <OnOff />
-            <OnOff />
+            <UncontrolledOnOff />
+            <OnOff valueOnOff={valueOnOff} setValueOnOff={setValueOnOff}/>
         </div>
     );
 }
@@ -34,6 +37,5 @@ type PageTitlePropsType = {
 function PageTitle(props: PageTitlePropsType) {
     return <h1>{props.title}</h1>
 }
-
 
 export default App;
