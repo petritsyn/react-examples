@@ -7,9 +7,13 @@ const empty = s.button;
 const bulbOn = s.bulb + ' ' + s.on;
 const bulbOff = s.bulb + ' ' + s.off;
 
-const UncontrolledOnOff = () => {
+type UncontrolledOnOffPropsType = {
+    defaultOn?: boolean
+}
 
-    let [value, setValue] = useState(false);
+export const UncontrolledOnOff = (props: UncontrolledOnOffPropsType) => {
+
+    let [value, setValue] = useState(props.defaultOn ? props.defaultOn : false);
 
     return (
         <div className={s.OnOff}>
