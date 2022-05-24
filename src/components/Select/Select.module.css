@@ -1,0 +1,15 @@
+.main {
+    margin-top: 20px;
+}
+
+.inputItem {
+    width: 100px;
+    height: 25px;
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 2px;
+}
+
+.inputItem:hover {
+    background-color: darkgrey;
+}
