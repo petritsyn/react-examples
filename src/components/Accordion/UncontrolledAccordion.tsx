@@ -38,11 +38,11 @@ type AccordionTitlePropsType = {
     onClick: () => void
 }
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+const AccordionTitle = React.memo(function AccordionTitle(props: AccordionTitlePropsType) {
     return <h3 onClick={props.onClick}>{props.title}</h3>
-}
+})
 
-function AccordionBody() {
+const AccordionBody = React.memo(function AccordionBody() {
     return <div>
         <ul>
             <li>1</li>
@@ -50,6 +50,6 @@ function AccordionBody() {
             <li>3</li>
         </ul>
     </div>
-}
+})
 
 export default UncontrolledAccordion;
