@@ -1,5 +1,4 @@
 import {action} from "@storybook/addon-actions";
-import {useState} from "react";
 import UncontrolledAccordion from "./UncontrolledAccordion";
 
 export default {
@@ -10,5 +9,5 @@ export default {
 const callBack = action('text')
 
 export const ModeChanging = () => {
-    return <UncontrolledAccordion title={'Menu'}/>;
+    return <UncontrolledAccordion title={'Uncontrolled menu'}/>;
 }
