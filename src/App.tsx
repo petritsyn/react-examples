@@ -7,6 +7,7 @@ import {UncontrolledRating} from "./components/Rating/UncontrolledRating";
 import Accordion from "./components/Accordion/Accordion";
 import OnOff from "./components/OnOff/OnOff";
 import Input from "./components/Select/Select";
+import Clock from "./components/Clock/Clock";
 
 function App() {
 
@@ -30,6 +31,8 @@ function App() {
             <OnOff valueOnOff={valueOnOff} setValueOnOff={setValueOnOff}/>
 
             <Input options={['empty', 'Option 1', 'Option 2', 'Option 3']}/>
+
+            <Clock/>
         </div>
     );
 }

@@ -26,6 +26,8 @@ const reducer = (state: StateType, action: ActionType): StateType => {
 
 export function UncontrolledAccordion(props: AccordionPropsType) {
 
+    console.log('UncontrolledAccordion rendering')
+
     const [collapsed, dispatch] = useReducer(reducer, {collapsed: false})
     return <div>
         <AccordionTitle title={props.title} onClick={() => dispatch({type: 'TOGGLE-COLLAPSED'})}/>
@@ -39,10 +41,16 @@ type AccordionTitlePropsType = {
 }
 
 const AccordionTitle = React.memo(function AccordionTitle(props: AccordionTitlePropsType) {
+
+    console.log('AccordionTitle rendering')
+
     return <h3 onClick={props.onClick}>{props.title}</h3>
 })
 
 const AccordionBody = React.memo(function AccordionBody() {
+
+    console.log('AccordionBody rendering')
+
     return <div>
         <ul>
             <li>1</li>
